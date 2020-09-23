@@ -6,7 +6,7 @@ class Bar:
   def __init__(self):
     pass
     
-    class Poo:
+class Poo:
   def __init__(self):
     pass
 
