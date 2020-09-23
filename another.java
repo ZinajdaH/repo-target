@@ -1,23 +1,4 @@
-from __future__ import unicode_literals
 
-from flask_rebar.utils.defaults import USE_DEFAULT
-from flask_rebar.swagger_generation import swagger_words as sw
-from flask_rebar.swagger_generation.swagger_generator import SwaggerGenerator
-from flask_rebar.swagger_generation.swagger_objects import Server
-from flask_rebar.swagger_generation.generator_utils import (
-    format_path_for_swagger,
-    verify_parameters_are_the_same,
-    get_response_description,
-    get_unique_schema_definitions,
-    recursively_convert_dict_to_ordered_dict,
-    get_ref_schema,
-    get_unique_authenticators,
-)
-from flask_rebar.swagger_generation.marshmallow_to_swagger import (
-    get_swagger_title,
-    get_schema_fields,
-)
-from flask_rebar.validation import Error
 
 
 class SwaggerV3Generator(SwaggerGenerator):
