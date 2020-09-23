@@ -317,26 +317,6 @@ class SwaggerV3Generator(SwaggerGenerator):
         """
         parameters = []
 
-        for prop, field in get_schema_fields(schema):
-            jsonschema = converter(field)
-
-            # Pardon the ugliness.
-            # We need the "explode" key to be at the parameters level, not at the schema level.
-            explode = jsonschema.pop(sw.explode, None)
-            description = jsonschema.pop(sw.description, None)
-
-            parameter = {
-                sw.name: prop,
-                sw.in_: in_,
-                sw.schema: jsonschema,
-                sw.required: bool(field.required),
-            }
-
-            if explode is not None:
-                parameter[sw.explode] = explode
-            if description is not None:
-                parameter[sw.description] = description
-
-            parameters.append(parameter)
+       
 
         return parameters
